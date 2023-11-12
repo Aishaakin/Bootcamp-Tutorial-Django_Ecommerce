@@ -1,0 +1,58 @@
+
+Cart Details {{ttl}}
+<hr>
+Total cash 
+<style>
+    .box {
+        border: 2px solid rgb(203, 47, 55);
+        width: auto;
+        text-align: center;
+        margin: 10px 20px;
+        padding: 5px 20px;
+        display: inline-block;
+    }
+</style>
+<!-- <div class="box">
+    <p style="color: blue;">Total items {{total}}</p>
+    <span style="margin-right: 5px; font-weight: 400; color: rgb(227, 136, 204);"></span>
+    <span style="font-weight: 400; color: brown;">{{cartitems}}</span>
+     -->
+</div>
+
+   <div class="box">
+    <p style="color: blue;">Total items {{actual_total}}</p>
+    <span style="margin-right: 5px; font-weight: 400; color: brown;"></span>
+    <span style="font-weight: 400; color: brown;">{{actual_qty}}</span>
+
+
+
+    <!-- <div class="box">
+        <p style="color: paleturquoise;">Details</p>
+        <span style="margin-right: 5px; font-weight: bolder; color: brown;">$#$
+        </span>
+
+        <span style="font-weight: bold; color: brown">{{details}}</span>
+    </div> -->
+
+    <hr>
+
+
+    <div class="box">
+        <p style="color: pink;">Details</p>
+        <span style="margin-right: 5px; font-weight: bolder; color: rgb(96, 220, 123);">{{details}}</span>
+        <span style="font-weight: bold; color: brown;"></span>
+        <!-- {{details2}}-->
+        <ul>
+        {%for i in details2%}
+            <li><!-- {{1}} -->
+        {%for j in i%}     
+           {{j}} &nbsp; &nbsp;
+{%endfor%}
+<a href="/shop/remove/{{i}}"> ( - remove)</a>
+</li>
+{%endfor%}
+</ul>
+</span>
+
+<p><a href="/shop/checkout/"></a>Check Out</p>
+</div>

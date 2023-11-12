@@ -1,0 +1,88 @@
+{%extends "shop/shopbase.html"%}
+
+{%block content %}
+
+{{pagetitle}} &nbsp; &#8358; &nbsp; {{ttl}},
+
+<span>{{actual_total}}</span>
+<p><a href="/shop/sample">Back to shop</a></p>
+
+
+<div class="boxcart">
+<ul>
+    <span class="frst">Data</span>
+<span class="spx">id</span>
+<span class="spx">Name</span>
+<span class="spx">Qty</span>
+<span class="spx">Cash</span>
+
+{%for i in details2%}
+<li><span>{{i}}</span>
+  
+    <span class="spx">{{i.0}}</span>
+    <span class="spx">{{i.1}}</span>
+    <span class="spx">{{i.2}}</span>
+    <span class="spx">{{i.3}}</span>
+
+ <a href="/shop/remove/{{i.o}}">Remove</a>   
+</li>
+{%%endfor}
+</ul>
+</div>
+<p></p>
+
+
+
+
+{%endblock%}
+
+
+
+
+
+{{title}}
+<hr>
+<style>
+    .box {
+        border: 2px solid brown;
+        width: auto;
+        text-align: center;
+        margin: 10px 20px;
+        padding: 5px 20px;
+        display: inline-block;
+    }
+        
+.box a {
+        display: inline-block;
+        margin: 10px 20px;
+        border: 1px solid rebeccapurple;
+        padding: 10px;
+        text-decoration: none;
+        color: palevioletred;
+        width: 80%;
+}
+    
+</style>
+{%for x in items%}
+<div class="box">
+<p style="color: blue;">{{x.name}}</p>
+<span style="margin-right: 5px; font-weight: bolder; color: brown;">$#$</span>
+<span style="color: brown;">{{x.price}}</span>
+<p>
+<img src="/media/{{x.image}}" width = 300px alt="">
+    <br>
+<span style="font-size: 20px; padding: 10px;">
+    {{x.description}}
+    </span>
+</p>
+<span style="font-weight: bolder; color: blue;">
+{{x.cartegory1}}
+</span>
+<span style="font-weight: bolder; color: blue;">
+{{x.cartegory2}}
+</span>
+
+<a href="shop/detail/{{x.id}}">View details</a>
+<a href="shop/cart/{{x.id}}">Add To Cart</a>
+</div>
+{%endfor%}

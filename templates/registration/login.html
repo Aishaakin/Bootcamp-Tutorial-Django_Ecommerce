@@ -1,0 +1,14 @@
+{%extends 'registration/base.html'%}
+{%block content"%}
+
+<div class="box">
+    <form method="POST">
+        {{%csrf_token%}}
+        {{form.as_p}}
+        <input type="submit"
+        value="Click to login">
+    </form>
+</div>
+Don't Have An Account
+
+{%endblock%}

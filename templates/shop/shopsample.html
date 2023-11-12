@@ -1,0 +1,46 @@
+{{title}}
+<hr>
+<style>
+    .box {
+        border: 2px solid rebeccapurple ;
+        width: auto;
+        text-align: center;
+        margin: 10px 20px;
+        padding: 5px 20px;
+        display: inline-block;
+    }
+        
+.box a {
+        display: inline-block;
+        margin: 10px 20px;
+        border: 1px solid rebeccapurple;
+        padding: 10px;
+        text-decoration: none;
+        color: palevioletred;
+        width: 80%;
+}
+    
+</style>
+{%for x in items%}
+<div class="box" style="border: solid 2px orange; width: 300px; text-align:center; display: inline;">
+<p style="color: royalblue;">{{x.name}}</p>
+<span style="margin-right: 5px; font-weight: bolder; color: brown;">&#8358;</span>
+<span style="color: brown;">{{x.price}}</span>
+<p>
+<img src="/media/{{x.image}}" width = 300px; alt="">
+    <br>
+<span style="font-size: 20px; padding: 10px;">
+    {{x.description}}
+</span>
+</p>
+<span style="font-weight: bolder; color: plum;">
+{{x.cartegory1}}
+</span>
+<span style="font-weight: bolder; color: plum;">
+{{x.cartegory2}}
+</span>
+
+<a href="shop/detail/{{x.id}}">View details</a>
+<a href="shop/cart/{{x.id}}">Add To Cart</a>
+</div>
+{%endfor%}
